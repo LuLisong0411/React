@@ -8,12 +8,21 @@ import ReactDom from 'react-dom'
 //创建dom对象
 // var H1 = React.createElement('h1',null,'这是一个H1');
 // var Div = React.createElement('div',{title:'this is a div',id:'div'},'这是一个div',H1)
+var title = "这是使用变量定义的值"
+var arr = [];
+for(var i = 0; i < 10; i++){ 
+    var p = <p className="Div" key={i}>JSX 真好用</p>
+    arr.push(p)
+}
+
 var Div = <div>
     这是使用了 JSX 语法创建的 Div。
-    <p>JSX 真好用</p>
-    <h1>要清楚 JSX 的本质原理</h1>
+    <p className="Div">JSX 真好用</p>
+    <h1 title={ title + '，符合js代码的编译都是可以的' }>要清楚 JSX 的本质原理</h1>
+    <label htmlFor=""></label>
+    {arr}
 </div>
 //React.render('要渲染的虚拟 DOM 元素','要渲染到页面上的哪个位置中')
 //***坑：ReactDom.render() 方法的第二个参数和 vue 不一样，不接收 "#app" 这样的字符串，而是需要传递一个原生的 DOM 对象。
-
+ 
 ReactDom.render(Div,document.getElementById('app'))
