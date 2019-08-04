@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Hello(props){
+function HelloJSX(props){
     return <div>
         <h1>这是Hello组件中定义的元素</h1>
-        <p>{props.name}--{props.age}--{props.addr}</p>
+        <p>JSX真好用</p>
     </div>
 }
-export default Hello
+export default HelloJSX
