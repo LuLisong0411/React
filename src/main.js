@@ -29,12 +29,33 @@ import ReactDom from 'react-dom'
 //***坑：React 在解析所有的标签的时候是以标签的首字母来区分的。
 // 如果标签的首字母是小写，那么按照普通的 html 标签来解析；如果首字母是大写则按照组件的形式去解析。
 //组件的首字母必须大写
- function Hello(){
-     return <div>
-         <h1>这是在hello组件中定义的元素</h1>
-     </div>
- }
+// var name = 'zs'
+// var age = 20
+var obj ={
+    name:'ls',
+    age: 19,
+    addr:'上海'
+}
+var obj1 ={
+    name:'ls',
+    age: 19,
+    addr:'上海'
+}
+
+import Hello from './common/Hello.jsx'
+// import HelloJSX from './common/Hello.js';
+// function Hello(props){
+//      return <div>
+//          <h1>这是在hello组件中定义的元素</h1>
+//          {/* <p>{name}-{age}</p> */}
+//          <p>{props.name}-{props.age}</p>
+//          {/* <p>{obj.name}-{obj.age}</p> */}
+//      </div>
+//  }
 // ReactDom.render(Div,document.getElementById('app'))
 ReactDom.render(<div>
-    <Hello></Hello>
+    {/* <Hello name={name} age={age}></Hello> */}
+    {/* <Hello name={obj.name} age={obj.age} addr={obj.addr}></Hello> */}
+    {/* <HelloJSX {...obj1}></HelloJSX> */}
+    <Hello>{...obj}</Hello>
 </div>,document.getElementById('app'))
