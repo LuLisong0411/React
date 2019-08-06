@@ -46,10 +46,23 @@ var obj = {
 import Hello from './common/Hello.js'
 import HelloJSX from './common/HelloJSX.jsx'
 import classTest from './class_test.js'
-import classExtends from './class_extends'
+import classExtends from './class_extends.js'
 // ReactDom.render(Div,document.getElementById('app'))
+class Hello2 extends React.Component{
+    //No `render` method found on the returned component instance: you may have forgotten to define `render`
+    //通过分析以上报错，发现提示我们在 class 实现的组建内部必须定义一个 render 函数
+    render(){
+        // Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.
+        //通过分析以上报错发现，在 render 函数中还必须 return 一个东西，如果没有什么需要被 return 的则需要 return null
+        return <div>
+            <h1>这是使用 class 类创建的组件</h1>
+        </div>   
+    }
+
+}
 ReactDom.render(<div>
     {/* <Hello name={obj.name} age={obj.age} addr={obj.addr}></Hello> */}
     <Hello {...obj}></Hello>
     <HelloJSX {...obj}></HelloJSX>
+    <Hello2></Hello2>
 </div>,document.getElementById('app'))
