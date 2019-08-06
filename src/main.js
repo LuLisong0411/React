@@ -45,7 +45,8 @@ var obj = {
 // }
 import Hello from './common/Hello.js'
 import HelloJSX from './common/HelloJSX.jsx'
-import classTest from './class_test'
+import classTest from './class_test.js'
+import classExtends from './class_extends'
 // ReactDom.render(Div,document.getElementById('app'))
 ReactDom.render(<div>
     {/* <Hello name={obj.name} age={obj.age} addr={obj.addr}></Hello> */}
